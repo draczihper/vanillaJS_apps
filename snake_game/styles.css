@@ -5,31 +5,33 @@
 }
 
 body {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
     height: 100vh;
 }
 
 .container {
-    width: 500px;
-    height: 400px;
+    width: 402px;
+    height: 402px;
     border: 2px solid black;
     position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    padding: 5px;
+    /* padding: 5px; */
+    z-index: 999;
 }
 
 .snake {
-    width: 10%;
-    height: 2.5%;
+    width: 40px;
+    height: 20px;
     background-color: #000;
+    position: absolute;
 }
 
 .ball {
-    width: 2.5%;
-    height: 2.5%;
+    width: 20px;
+    height: 20px;
     background-color: #008000;
+    position: absolute;
+    z-index: 99;
+    overflow: hidden;
 }

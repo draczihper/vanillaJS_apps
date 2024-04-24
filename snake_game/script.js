@@ -11,18 +11,33 @@ const snakeElHeight = 20;
 // Randomly find the next position of our ball and update it to the DOM
 const posX = Math.floor(Math.random() * (containerElWidth / snakeElWidth ));
 const posY = Math.floor(Math.random() * (containerElHeight / snakeElHeight ));
-const leftPos = posX * 20;
-const topPos = posY * 20;
+const ballLeftPos = posX * 20;
+const ballTopPos = posY * 20;
 
-ballEl.style = `
-    left: ${leftPos}px;
-    top: ${topPos}px;
-`
+ballEl.style.left = ballLeftPos + "px";
+ballEl.style.top = ballTopPos + "px";
+
+let snakeElPosX = 0;
+let snakeElPosY = 0;
+let speedFactor = 0.05;
 
 
-    snakeEl.setTimeout(() => {
-        snakeEl.style.left += '20px';
-    }, 1000);
+function animate(time, lastTime) {
+    if (lastTime != null) {
+    snakeElPosX += (time - lastTime) * speedFactor;
+    // snakeElPosY += (time - lastTime) * speedFactor;
+    }
+    if (snakeEl.style.left == 400 + 'px') {
+        snakeElPosX = 0;
+        // snakeEl.style.left = (snakeElPosX + 20) + 'px';
+    } else {
+        snakeEl.style.left = (snakeElPosX + 20) + "px";
+    }
+    snakeEl.style.top = (snakeElPosY + 20) + "px";
+    requestAnimationFrame(newTime => animate(newTime, time));
+    }
+    requestAnimationFrame(animate);
+
 
 
 
