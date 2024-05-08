@@ -73,13 +73,13 @@ ball.style.bottom = ballCurrentPosition[1] + 'px';
 
 function moveUser (e) {
     switch(e.key) {
-        case 'ArrowLeft':
+        case 'ArrowUp':
             if (currentPosition[0] > 0) {
                 currentPosition[0] -= 10;
                 drawUser();
             }
             break;
-        case 'ArrowRight':
+        case 'ArrowDown':
             if(currentPosition[0] < boardWidth - blockWidth) {
                 currentPosition[0] += 10;
                 drawUser();
@@ -116,6 +116,12 @@ function checkForCollisions() {
         changeDirection();
         score++;
         scoreDisplay.innerHTML = score;
+
+        if (blocks.length === 0) {
+            scoreDisplay.innerHTML = "YOU WIN";
+            clearInterval(timerId);
+            document.removeEventListener('keydown');
+        }
        }
     }
 
