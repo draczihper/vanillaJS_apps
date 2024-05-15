@@ -5,7 +5,7 @@ const squares = document.querySelectorAll('.grid div');
 let currentIndex = 76;
 
 
-function moveFrog() {
+function moveFrog(e) {
     
     switch (e.key) {
         case 'ArrowLeft':
