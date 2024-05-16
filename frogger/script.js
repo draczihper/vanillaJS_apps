@@ -34,13 +34,22 @@ function autoMoveLogs() {
 
 function moveLogLeft(logLeft) {
   switch (true) {
-    case logLeft.classList.contains('li'):
+    case logLeft.classList.contains('l1'):
+      logLeft.classList.remove('l1');
+      logLeft.classList.add('l2');
+      break;
+    case logLeft.classList.contains('l2'):
+        logLeft.classList.remove('l2');
+        logLeft.classList.add('l3');
+      break;
+      case logLeft.classList.contains('l3'):
+        logLeft.classList.remove('l3');
+        logLeft.classList.add('l4');
+        break;
       
-      break;
   
-    default:
-      break;
+    
   }
 }
 
-console.log(2)
+setInterval(autoMoveLogs, 300);
