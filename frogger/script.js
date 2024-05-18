@@ -129,7 +129,8 @@ function lose() {
   if (squares[currentIndex].classList.contains('c1')) {
     resultDisplay.textContent = "You lose!";
     clearInterval(timerId);
-    square[currentIndex].classList.remove('frog');
+    squares[currentIndex].classList.remove('frog');
+    document.removeEventListener('keyup', moveFrog);
   }
   }
 
