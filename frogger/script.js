@@ -125,6 +125,13 @@ function moveCarRight(carRight) {
   }
 }
 
+function lose() {
+  if (squares[currentIndex].classList.contains('c1')) {
+    resultDisplay.textContent = "You lose!";
+    clearInterval(timerId);
+    square[currentIndex].classList.remove('frog');
+  }
+  }
 
 
 timerId = setInterval(autoMoveElements, 1000);
