@@ -1,6 +1,6 @@
 const timeLeftDisplay = document.querySelector("#time-left");
 const resultDisplay = document.querySelector("#result");
-const startPauseButton = document.querySelector("#start-pause-button");
+const startPauseButton = document.querySelector("#start-pause");
 const squares = document.querySelectorAll(".grid div");
 const logsLeft = document.querySelectorAll(".log-left");
 const logsRight = document.querySelectorAll(".log-right");
@@ -11,7 +11,8 @@ const carsRight = document.querySelectorAll('.car-right')
 let currentIndex = 76;
 const width = 9;
 let timerId;
-let currentTime = 5;
+let outcomeTimerId;
+let currentTime = 20;
 
 function moveFrog(e) {
   squares[currentIndex].classList.remove("frog");
@@ -40,6 +41,11 @@ function autoMoveElements() {
   logsRight.forEach((logRight) => moveLogRight(logRight));
   carsLeft.forEach((carLeft) => moveCarLeft(carLeft));
   carsRight.forEach((carRight) => moveCarRight(carRight));
+  lose();
+  win();
+}
+
+function checkOutcomes() {
   lose();
   win();
 }
@@ -137,6 +143,7 @@ function lose() {
 ) {
     resultDisplay.textContent = "You lose!";
     clearInterval(timerId);
+    clearInterval(outcomeTimerId);
     squares[currentIndex].classList.remove('frog');
     document.removeEventListener('keyup', moveFrog);
   }
@@ -154,9 +161,14 @@ function lose() {
   startPauseButton.addEventListener(
     'click', () => {
       if (timerId) {
-        clearInterval(timerId)
+        clearInterval(timerId);
+        document.removeEventListener('keyup', moveFrog);
+        clearInterval(outcomeTimerId);
+        outcomeTimerId = null;
+        timerId = null;
       } else {
         timerId = setInterval(autoMoveElements, 1000);
+        outcomeTimerId = setInterval(checkOutcomes, 50);
         document.addEventListener('keyup', moveFrog);
       }
     }
