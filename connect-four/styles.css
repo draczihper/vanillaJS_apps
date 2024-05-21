@@ -3,3 +3,9 @@
     height: 120px;
     width: 140px;
 }
+
+.grid div {
+    height: 20px;
+    width: 20px;
+    background-color: blue;
+}
