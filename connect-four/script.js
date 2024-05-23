@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentPlayer = 1;
 
+    const winningArrays = [
+        [],
+    ];
+
     function checkBoard() {
         
     }
