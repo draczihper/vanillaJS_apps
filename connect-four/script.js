@@ -5,6 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentPlayer = 1;
 
+    function checkBoard() {
+        
+    }
+
     for(let i = 0; i < squares.length; i++) {
         squares[i].onclick = () => {
             if (squares[i + 7].classList.contains('taken')) {
@@ -22,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert("Can't go here");
                 }
             }
+            checkBoard();
         }
     }
 });
