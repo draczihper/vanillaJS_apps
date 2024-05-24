@@ -84,6 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const square3 = squares[winningArrays[y][2]];
             const square4 = squares[winningArrays[y][3]];
         }
+
+        if (square1.classList.contains('player-one') && square2.classList.contains('player-one') && square3.classList.contains('player-one') &&
+        square4.classList.contains('player-one')) {
+            result.innerHTML = 'Player one wins';
+        }
+        if (square1.classList.contains('player-two') && square2.classList.contains('player-two') && square3.classList.contains('player-two') &&
+        square4.classList.contains('player-two')) {
+            result.innerHTML = 'Player Two wins';
+        }
     }
 
     for(let i = 0; i < squares.length; i++) {
