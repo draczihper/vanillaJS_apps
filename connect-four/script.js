@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const square2 = squares[winningArrays[y][1]];
             const square3 = squares[winningArrays[y][2]];
             const square4 = squares[winningArrays[y][3]];
-        }
+        
 
         if (square1.classList.contains('player-one') && square2.classList.contains('player-one') && square3.classList.contains('player-one') &&
         square4.classList.contains('player-one')) {
@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
         square4.classList.contains('player-two')) {
             result.innerHTML = 'Player Two wins';
         }
+    }
     }
 
     for(let i = 0; i < squares.length; i++) {
