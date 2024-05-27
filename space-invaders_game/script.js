@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
 
+  let currentShooterIndex = 202;
+
   for (let i = 0; i < 225; i++) {
     const square = document.createElement("div");
     grid.appendChild(square);
@@ -21,5 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   draw();
-  squares[200].classList.add('shooter')
+  squares[currentShooterIndex].classList.add('shooter');
+
+  function moveShooter(e) {
+    
+  }
 });
