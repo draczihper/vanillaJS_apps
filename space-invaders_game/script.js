@@ -27,11 +27,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function moveShooter(e) {
     squares[currentShooterIndex].classList.remove('shooter');
-    switch(e,key) {
+    switch(e.key) {
       case 'ArrowLeft':
         if (currentShooterIndex  % width !== 0) {
           currentShooterIndex -= 1;
+          break;
         }
+      case 'ArrowRight':
+        if (currentShooterIndex % width < width - 1) {
+          currentShooterIndex += 1;
+          break
+        }
+
     }
+    
   }
 });
