@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
 
   let currentShooterIndex = 202;
+  let width = 15;
 
   for (let i = 0; i < 225; i++) {
     const square = document.createElement("div");
@@ -9,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-  const squares = document.querySelectorAll('.grid div');
+  const squares = Array.from(document.querySelectorAll('.grid div'));
 
   const alienInvaders = [
     0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     }
-    
+    squares[currentShooterIndex].classList.add('shooter');
   }
+  document.addEventListener('keydown', moveShooter);
 });
