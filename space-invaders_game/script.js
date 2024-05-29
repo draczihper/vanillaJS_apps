@@ -24,6 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
   draw();
+
+  function remove() {
+    for(let i = 0; i < alienInvaders.length; i++) {
+        squares[alienInvaders[i]].classList.remove('invader');
+    }
+  }
+
   squares[currentShooterIndex].classList.add('shooter');
 
   function moveShooter(e) {
@@ -47,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function moveInvaders() {
     const leftEdge = alienInvaders[0] % width === 0;
+    const rightEdge = alienInvaders[alienInvaders.length - 1] % width === -1;
   }
   moveInvaders();
 });
