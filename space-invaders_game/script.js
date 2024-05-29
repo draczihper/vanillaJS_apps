@@ -63,5 +63,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     draw();
   }
-  moveInvaders();
+  setInterval(moveInvaders, 500);
 });
