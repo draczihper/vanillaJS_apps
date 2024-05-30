@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentShooterIndex = 202;
   let width = 15;
+  let direction = 1;
+  let invadersId;
 
   for (let i = 0; i < 225; i++) {
     const square = document.createElement("div");
@@ -59,9 +61,9 @@ document.addEventListener("DOMContentLoaded", () => {
     remove();
 
     for (let i = 0; i < alienInvaders.length; i++) {
-      alienInvaders[i] += 1;
+      alienInvaders[i] += direction;
     }
     draw();
   }
-  setInterval(moveInvaders, 500);
+ invadersId = setInterval(moveInvaders, 500);
 });
