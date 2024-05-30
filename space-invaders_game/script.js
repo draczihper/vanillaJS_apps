@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let width = 15;
   let direction = 1;
   let invadersId;
+  let goingRight = true;
 
   for (let i = 0; i < 225; i++) {
     const square = document.createElement("div");
@@ -59,6 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const leftEdge = alienInvaders[0] % width === 0;
     const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width - 1;
     remove();
+
+    if(rightEdge && goingRight) {
+      for (let i = 0; i < alienInvaders.length; i++) {
+        alienInvaders[i] += width - 1;
+        direction = -1;
+      }
+    }
 
     for (let i = 0; i < alienInvaders.length; i++) {
       alienInvaders[i] += direction;
