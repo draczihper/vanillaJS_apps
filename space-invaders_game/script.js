@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
+  const resultDisplay = document.querySelector('.result')
 
   let currentShooterIndex = 202;
   let width = 15;
@@ -83,7 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
     draw();
 
     if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
-      console.log('Game Over');
+      resultDisplay.innerText = "Game over!"
+      clearInterval(invadersId);
     }
   }
  invadersId = setInterval(moveInvaders, 500);
