@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if(leftEdge && !goingRight){
       for (let i = 0; i < alienInvaders.length; i++) {
-        alienInvaders[i] += width -1;
+        alienInvaders[i] += width - 1;
         direction = 1;
         goingRight = true;
       }
@@ -81,6 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
       alienInvaders[i] += direction;
     }
     draw();
+
+    if (squares[currentShooterIndex].classList.contains('invader', 'shooter')) {
+      console.log('Game Over');
+    }
   }
  invadersId = setInterval(moveInvaders, 500);
 });
