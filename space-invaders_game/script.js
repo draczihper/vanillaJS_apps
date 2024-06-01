@@ -87,6 +87,12 @@ document.addEventListener("DOMContentLoaded", () => {
       resultDisplay.innerText = "Game over!"
       clearInterval(invadersId);
     }
+
+    for (let i = 0; i < alienInvaders.length; i++) {
+      if(alienInvaders[i] > squares.length ) {
+        resultDisplay.innerText = 'Game over'
+      }
+    }
   }
  invadersId = setInterval(moveInvaders, 500);
 });
