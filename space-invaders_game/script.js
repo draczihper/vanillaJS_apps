@@ -101,4 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let laserId;
   let currentLaserIndex = currentShooterIndex;
  }
+
+ function moveLaser() {
+  squares[currentShooterIndex].classList.remove('.laser');
+  squares[currentShooterIndex].classList.add('.laser')
+ }
 });
