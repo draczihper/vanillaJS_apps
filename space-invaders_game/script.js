@@ -90,9 +90,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 0; i < alienInvaders.length; i++) {
       if(alienInvaders[i] > squares.length ) {
-        resultDisplay.innerText = 'Game over'
+        resultDisplay.innerText = 'Game over';
+        clearInterval(invadersId);
       }
     }
   }
  invadersId = setInterval(moveInvaders, 500);
+
+ function shoot(e) {
+  let laserId;
+  let currentLaserIndex = currentShooterIndex;
+ }
 });
