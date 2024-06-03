@@ -106,14 +106,21 @@ document.addEventListener("DOMContentLoaded", () => {
   squares[currentShooterIndex].classList.remove('.laser');
   squares[currentShooterIndex].classList.add('.laser');
 
-  switch (key) {
-    case value:
-      
+  if (squares[currentLaserIndex].classList.contains('invader')) {
+    squares[currentLaserIndex].classList.remove('.laser');
+    squares[currentLaserIndex].classList.remove('.invader');
+    squares[currentLaserIndex].classList.add('boom');
+  }
+ }
+
+  switch (e.key) {
+    case 'ArrowUp':
+      laserId = setInterval(moveLaser, 100);
       break;
   
     default:
       break;
-  }
+  
 
  }
 
