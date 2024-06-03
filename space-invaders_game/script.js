@@ -104,6 +104,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
  function moveLaser() {
   squares[currentShooterIndex].classList.remove('.laser');
-  squares[currentShooterIndex].classList.add('.laser')
+  squares[currentShooterIndex].classList.add('.laser');
+
+  switch (key) {
+    case value:
+      
+      break;
+  
+    default:
+      break;
+  }
+
  }
+
+ document.addEventListener('keydown', shoot);
 });
