@@ -100,29 +100,28 @@ document.addEventListener("DOMContentLoaded", () => {
  function shoot(e) {
   let laserId;
   let currentLaserIndex = currentShooterIndex;
- }
-
  function moveLaser() {
-  squares[currentShooterIndex].classList.remove('.laser');
-  squares[currentShooterIndex].classList.add('.laser');
-
-  if (squares[currentLaserIndex].classList.contains('invader')) {
-    squares[currentLaserIndex].classList.remove('.laser');
-    squares[currentLaserIndex].classList.remove('.invader');
-    squares[currentLaserIndex].classList.add('boom');
-  }
+  squares[currentLaserIndex].classList.remove('laser');
+  currentLaserIndex -= width;
+  squares[currentLaserIndex].classList.add('laser');
  }
-
+  
   switch (e.key) {
     case 'ArrowUp':
       laserId = setInterval(moveLaser, 100);
       break;
-  
-    default:
-      break;
-  
+  }
 
+
+
+if (squares[currentLaserIndex].classList.contains('invader')) {
+  squares[currentLaserIndex].classList.remove('laser');
+  squares[currentLaserIndex].classList.remove('invader');
+  squares[currentLaserIndex].classList.add('boom');
  }
+
+ 
+}
 
  document.addEventListener('keydown', shoot);
 });
