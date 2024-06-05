@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let direction = 1;
   let invadersId;
   let goingRight = true;
+  let aliensRemoved = [];
 
   for (let i = 0; i < 225; i++) {
     const square = document.createElement("div");
@@ -113,7 +114,10 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       squares[currentLaserIndex].classList.remove('boom')
     }, 300);
-    clearInterval(laserId)
+    clearInterval(laserId);
+
+    const alienRemoved = alienInvaders.indexOf(currentLaserIndex);
+    aliensRemoved.push(alienRemoved);
    }
  }
   
