@@ -95,6 +95,10 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(invadersId);
       }
     }
+    if (aliensRemoved.length === alienInvaders.length) {
+      resultDisplay.innerHTML = 'YOU WIN';
+      clearIntervalI(invadersId);
+    }
   }
   invadersId = setInterval(moveInvaders, 500);
 
