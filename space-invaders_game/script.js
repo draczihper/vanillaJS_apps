@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let invadersId;
   let goingRight = true;
   let aliensRemoved = [];
+  let result = 0
 
   for (let i = 0; i < 225; i++) {
     const square = document.createElement("div");
