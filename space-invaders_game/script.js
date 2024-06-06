@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const alienRemoved = alienInvaders.indexOf(currentLaserIndex);
         aliensRemoved.push(alienRemoved);
         results++;
+        resultDisplay.innerHTML = results;
       }
     }
 
