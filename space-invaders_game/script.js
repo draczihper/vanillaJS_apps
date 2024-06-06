@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let invadersId;
   let goingRight = true;
   let aliensRemoved = [];
-  let result = 0
+  let results = 0
 
   for (let i = 0; i < 225; i++) {
     const square = document.createElement("div");
@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const alienRemoved = alienInvaders.indexOf(currentLaserIndex);
         aliensRemoved.push(alienRemoved);
+        results++;
       }
     }
 
