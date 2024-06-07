@@ -42,18 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function moveShooter(e) {
     squares[currentShooterIndex].classList.remove("shooter");
-    switch (e.key) {
-      case "ArrowLeft":
+      if(e.key === 'd' || e.key === 'D'){
         if (currentShooterIndex % width !== 0) {
           currentShooterIndex -= 1;
-          break;
         }
-      case "ArrowRight":
+      }
+      if (e.key === 'a' || e.key === 'A'){
         if (currentShooterIndex % width < width - 1) {
           currentShooterIndex += 1;
-          break;
         }
-    }
+        }
+    
     squares[currentShooterIndex].classList.add("shooter");
   }
   document.addEventListener("keydown", moveShooter);
