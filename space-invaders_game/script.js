@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function moveShooter(e) {
     squares[currentShooterIndex].classList.remove("shooter");
-      if(e.key === 'd' || e.key === 'D'){
+      if(e.key === 'a' || e.key === 'A' || "ArrowRight"){
         if (currentShooterIndex % width !== 0) {
           currentShooterIndex -= 1;
         }
       }
-      if (e.key === 'a' || e.key === 'A'){
+      if (e.key === 'd' || e.key === 'D' || "ArrowLeft"){
         if (currentShooterIndex % width < width - 1) {
           currentShooterIndex += 1;
         }
