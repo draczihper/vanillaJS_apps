@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearIntervalI(invadersId);
     }
   }
-  invadersId = setInterval(moveInvaders, 500);
+  invadersId = setInterval(moveInvaders, 300);
 
   function shoot(e) {
     let laserId;
