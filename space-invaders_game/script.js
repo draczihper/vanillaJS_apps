@@ -85,13 +85,13 @@ document.addEventListener("DOMContentLoaded", () => {
     draw();
 
     if (squares[currentShooterIndex].classList.contains("invader", "shooter")) {
-      resultDisplay.innerText = "Game over!";
+      resultDisplay.innerText = "GAME OVER";
       clearInterval(invadersId);
     }
 
     for (let i = 0; i < alienInvaders.length; i++) {
       if (alienInvaders[i] > squares.length) {
-        resultDisplay.innerText = "Game over";
+        resultDisplay.innerText = "GAME OVER";
         clearInterval(invadersId);
       }
     }
