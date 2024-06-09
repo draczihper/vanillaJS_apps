@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+
   const grid = document.querySelector(".grid");
   const resultDisplay = document.querySelector(".result");
 
@@ -135,4 +135,3 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.addEventListener("keydown", shoot);
-});
